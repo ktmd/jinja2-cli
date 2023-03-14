@@ -14,8 +14,3 @@ port = 5432
 username = "user"
 password = "secret"
 
-items = [
-        "foo",
-        "bar",
-        "baz"
-]
