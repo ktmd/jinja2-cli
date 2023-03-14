@@ -4,7 +4,7 @@ import toml
 
 # Load the TOML data into a Python dictionary
 with open("sample2.toml") as f:
-    data = toml.load(f)
+    data = toml.load(f),
 
 print(f'all data={data}\n')
 
