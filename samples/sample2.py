@@ -11,4 +11,11 @@ print(f'all data={data}\n')
 # Access the data in the dictionary
 print(f'title={data["title"]}\n')
 
+
+# Access the data in the dictionary
+
 print(f'items={data["items"]}\n')
+
+print(f'database={data["database"]}\n')
+
+print(f'section2 items={data["section2"]["items"]}\n')
