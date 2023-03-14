@@ -1,3 +1,8 @@
+# pip install jinja2-cli[toml]
+
+import toml
+import pprint
+
 from jinja2 import Template
 template = Template('Hello {{ name }}!')
 output=template.render(name='John Doe')
@@ -5,20 +10,30 @@ output=template.render(name='John Doe')
 print(f"output={output}")
 
 
-# pip install jinja2-cli[toml]
-
-import toml
 
 # Load the TOML data into a Python dictionary
-with open("sample2.toml") as f:
+with open("sample3.toml") as f:
     data = toml.load(f),
 
-print(f'all data={data}\n')
+print(f'all data=\n')
+print(data)
 
-data={'title': 'My Configuration', 'items': ['foo', 'bar', 'baz'], 'database': {'host': 'localhost', 'port': 5432, 'username': 'user', 'password': 'secret'}, 'section2': {'items': ['foo', 'bar', 'baz']}}
-section2_items=data['title']
+# data='''{'debug': True,
+#   'grpc': {'address': ['tcp://0.0.0.0:1234'],
+#            'debugAddress': '0.0.0.0:6060',
+#            'gid': 0,
+#            'tls': {'ca': '/etc/buildkit/tlsca.crt',
+#                    'cert': '/etc/buildkit/tls.crt',
+#                    'key': '/etc/buildkit/tls.key'},
+#            'uid': 0},
+#   'history': {'maxAge': 172800, 'maxEntries': 50}
+#   }
+# '''
+print("***data:")
+pprint.pprint(data)
 
-template = Template('items={{ section2_items }}')
-output=template.render(sections2_items=data['title'])
+template = Template('grpc={{ grpc }}')
+output=template.render(grpc=data[0]['grpc'])
 
-print(output)
+print("output=\n")
+pprint.pprint(output)
