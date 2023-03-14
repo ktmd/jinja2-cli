@@ -1,5 +1,5 @@
 # $ jinja2
-A CLI interface to Jinja2
+A CLI interface to Jinja2 with toml sample
 ```
 $ jinja2 helloworld.tmpl data.json --format=json
 $ cat data.json | jinja2 helloworld.tmpl
